@@ -1,32 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
 
 :root {
-  /* Nền tổng thể: Xám khói nhẹ (Off-white premium) */
   --bg-color: #F8FAFC; 
-  
-  /* Màu chữ: Xanh đen mực (Tạo sự tin cậy, sắc nét hơn màu đen tuyền) */
   --text-main: #0F172A; 
   --text-secondary: #475569;
-  
-  /* Màu Accent: Xanh Electric (Dùng tiết chế để dẫn dắt mắt nhìn) */
+  --text-light: #94A3B8;
   --accent: #2563EB; 
-  
-  /* Hiệu ứng đổ bóng nhiều lớp (Bí quyết để sản phẩm nổi lên) */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --border-subtle: #E2E8F0;
 }
 
 body {
   margin: 0;
   background-color: var(--bg-color);
   color: var(--text-main);
-  font-family: 'Manrope', system-ui, -apple-system, sans-serif; /* Font hiện đại, clean */
-  line-height: 1.6;
+  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
 }
-
-/* Custom Scrollbar tinh tế */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }

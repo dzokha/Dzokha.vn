@@ -1,155 +1,295 @@
-.layout-wrapper {
-  display: flex;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-
-/* --- SIDEBAR: VỮNG CHÃI & TỐI GIẢN --- */
+/* Sidebar - Căn giữa tuyệt đối */
 .sidebar {
   width: 35%;
   height: 100vh;
   position: sticky;
   top: 0;
-  padding: 80px 40px 80px 0;
   display: flex;
   flex-direction: column;
+  justify-content: center; /* Căn giữa nội dung theo chiều dọc */
+  padding-left: 100px;     /* Tạo khoảng cách bên trái để không bị ép sát lề */
+  border-right: 1px solid var(--border-subtle);
 }
 
-.brand-name {
-  font-size: 3rem;
-  font-weight: 800;
+.sidebar-inner {
+  max-width: 300px; /* Giới hạn độ rộng để text trông chuyên nghiệp hơn */
+}
+
+/* Identity Section */
+.brand-alias {
+  font-size: 3.5rem;
+  font-weight: 850;
+  letter-spacing: -0.05em;
   color: var(--text-main);
-  letter-spacing: -0.03em;
   margin: 0;
-  line-height: 1;
 }
 
-.brand-role {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--accent);
-  margin-top: 12px;
-  display: inline-block;
-  background: #EFF6FF; /* Nền xanh nhạt làm nổi bật chức danh */
-  padding: 4px 12px;
-  border-radius: 6px;
+.brand-fullname {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  margin-top: 8px;
+  color: var(--text-secondary);
+}
+
+.role-container { margin-top: 24px; }
+.role-en { display: block; font-size: 0.95rem; font-weight: 700; color: var(--accent); text-transform: uppercase; }
+.role-vn { display: block; font-size: 0.85rem; color: var(--text-light); font-style: italic; margin-top: 2px; }
+
+.separator {
+  width: 40px;
+  height: 2px;
+  background-color: var(--accent);
+  margin: 32px 0;
 }
 
 .intro-text {
-  margin-top: 24px;
+  font-size: 0.95rem;
+  line-height: 1.7;
   color: var(--text-secondary);
-  font-size: 1rem;
-  max-width: 350px;
 }
 
-.nav-menu { margin-top: auto; display: flex; flex-direction: column; gap: 16px; }
+/* Navigation & Hover Effects */
+.nav-menu {
+  margin: 48px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
   text-decoration: none;
-  color: var(--text-secondary);
-  font-weight: 600;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: all 0.2s;
-}
-.nav-link:hover { color: var(--accent); transform: translateX(5px); }
-.nav-link.active { color: var(--text-main); border-left: 3px solid var(--accent); padding-left: 12px; }
-
-/* --- MAIN CONTENT: SÂN KHẤU TRÌNH DIỄN --- */
-.main-content {
-  width: 65%;
-  padding: 80px 0 120px 0;
 }
 
-/* Card chứa thông tin dự án */
-.project-card {
-  margin-bottom: 80px; /* Khoảng cách lớn để người xem tập trung từng dự án */
-  position: relative;
+/* Hiệu ứng thanh ngang khi hover */
+.nav-indicator {
+  width: 24px;
+  height: 1px;
+  background-color: var(--text-light);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.project-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 16px;
-}
-
-.project-year {
+.nav-en {
+  display: block;
   font-size: 0.8rem;
   font-weight: 700;
-  color: #94A3B8;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  color: var(--text-light);
+  letter-spacing: 0.1em;
+  transition: color 0.3s ease;
 }
 
-.project-title {
-  font-size: 1.75rem;
-  font-weight: 700;
-  margin: 0 0 12px 0;
+.nav-vn {
+  font-size: 0.7rem;
+  color: var(--text-light);
+  opacity: 0.5;
+}
+
+/* Trạng thái Hover hoặc Active */
+.nav-link:hover .nav-indicator, 
+.nav-link.active .nav-indicator {
+  width: 50px; /* Thanh ngang dài ra khi hover */
+  background-color: var(--text-main);
+}
+
+.nav-link:hover .nav-en, 
+.nav-link.active .nav-en {
   color: var(--text-main);
 }
 
-.project-desc {
-  color: var(--text-secondary);
+/* Partner Logos Section */
+.partner-logos {
+  display: flex;
+  gap: 16px;
+  align-items: center;
   margin-bottom: 24px;
-  max-width: 90%;
 }
 
-/* --- QUAN TRỌNG: KHUNG SẢN PHẨM --- */
-.product-frame {
-  background: #1e293b; /* Giả lập màu thanh tiêu đề của cửa sổ ứng dụng */
+.p-logo {
+  height: 20px;
+  width: auto;
+  filter: grayscale(100%); /* Phong cách đen trắng chuyên nghiệp */
+  opacity: 0.4;
+  transition: all 0.3s ease;
+}
+
+.p-logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1); /* Phóng to nhẹ khi hover */
+}
+
+.sidebar-footer {
+  font-size: 0.7rem;
+  color: var(--text-light);
+  opacity: 0.6;
+  text-transform: uppercase;
+}
+
+
+.layout-wrapper {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh; /* Đảm bảo bao phủ toàn màn hình */
+}
+
+/* --- SIDEBAR: CĂN GIỮA & CÂN ĐỐI --- */
+.sidebar {
+  width: 35%;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  padding: 0 60px; /* Padding trái phải rộng rãi */
+  
+  /* Flexbox giúp đưa mọi thứ vào giữa theo chiều dọc */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  border-right: 1px solid var(--border-subtle); /* Đường kẻ ngăn cách mờ */
+}
+
+
+/* --- MAIN CONTENT --- */
+.main-content {
+  width: 65%;
+  padding: 100px 80px; /* Padding rộng tạo cảm giác thoáng đãng */
+}
+
+.section-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-light);
+  margin-bottom: 40px;
+}
+
+/* --- PROJECT CARD: KHÔNG ẢNH - CHỈ CÓ TRẢI NGHIỆM --- */
+.project-card {
+  background: #ffffff;
+  padding: 40px;
+  margin-bottom: 30px;
   border-radius: 12px;
-  padding-top: 24px; /* Chừa chỗ cho "thanh tiêu đề" */
+  border: 1px solid transparent; /* Chuẩn bị sẵn border */
+  cursor: pointer;
   position: relative;
-  box-shadow: var(--shadow-xl); /* Đổ bóng đậm tạo độ nổi 3D */
-  border: 1px solid rgba(0,0,0,0.05);
-  overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* Bóng đổ nhẹ mặc định */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02); 
 }
 
-/* Giả lập 3 nút tròn đỏ/vàng/xanh của cửa sổ ứng dụng */
-.product-frame::before {
+/* Hiệu ứng Hover: Nổi lên & Border trái màu xanh */
+.project-card:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+  border-color: var(--border-subtle);
+}
+
+/* Thanh màu xanh trang trí bên trái khi hover */
+.project-card::before {
   content: '';
   position: absolute;
-  top: 8px;
-  left: 12px;
-  width: 40px;
-  height: 8px;
-  background-image: radial-gradient(circle, #ff5f56 3px, transparent 4px),
-                    radial-gradient(circle, #ffbd2e 3px, transparent 4px),
-                    radial-gradient(circle, #27c93f 3px, transparent 4px);
-  background-position: 0 0, 14px 0, 28px 0;
-  background-repeat: no-repeat;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--accent);
+  border-radius: 4px 0 0 4px;
+  opacity: 0; /* Ẩn mặc định */
+  transition: opacity 0.3s;
 }
 
-.product-frame:hover {
-  transform: translateY(-8px); /* Nhấc nhẹ sản phẩm lên khi hover */
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+.project-card:hover::before {
+  opacity: 1; /* Hiện lên khi hover */
 }
 
-.product-image {
-  width: 100%;
-  display: block;
-  border-radius: 0 0 12px 12px; /* Bo góc dưới */
-  border-top: 1px solid rgba(255,255,255,0.1);
+/* Nội dung bên trong Card */
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
-.tags { display: flex; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
-.tag {
-  background: #FFFFFF;
-  border: 1px solid #E2E8F0;
+.project-year {
+  font-family: monospace;
+  color: var(--text-light);
+  font-size: 0.85rem;
+}
+
+.card-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Mũi tên chỉ hiện rõ khi hover */
+.arrow-icon {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+  color: var(--accent);
+  font-size: 1.5rem;
+}
+
+.project-card:hover .arrow-icon {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.card-desc {
   color: var(--text-secondary);
-  padding: 6px 14px;
-  border-radius: 100px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+/* Tags công nghệ gọn gàng */
+.tags { display: flex; gap: 10px; flex-wrap: wrap; }
+.tag {
   font-size: 0.75rem;
   font-weight: 600;
+  color: var(--text-secondary);
+  background: #F1F5F9;
+  padding: 6px 14px;
+  border-radius: 6px;
+}
+.project-card:hover .tag {
+  background: #EFF6FF; /* Đổi màu nền tag nhẹ khi hover card */
+  color: var(--accent);
 }
 
 @media (max-width: 1024px) {
-  .layout-wrapper { flex-direction: column; padding: 20px; }
-  .sidebar { width: 100%; height: auto; padding: 40px 0; position: relative; }
-  .main-content { width: 100%; padding: 0; }
-  .nav-menu { display: none; }
+  .layout-wrapper { flex-direction: column; }
+  .sidebar { 
+    width: 100%; 
+    height: auto; 
+    padding: 60px 40px; 
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .main-content { width: 100%; padding: 40px; }
+}
+
+
+.sidebar {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Cân giữa nội dung theo chiều dọc */
+}
+
+.sidebar-inner {
+  height: 90%; /* Hoặc tùy chỉnh để tạo khoảng trống */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Đẩy Identity lên trên và Footer xuống dưới cùng */
 }
