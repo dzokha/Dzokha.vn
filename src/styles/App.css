@@ -1,4 +1,4 @@
-/* Sidebar - Căn giữa tuyệt đối */
+/* --- SIDEBAR CHO DESKTOP --- */
 .sidebar {
   width: 35%;
   height: 100vh;
@@ -6,13 +6,17 @@
   top: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Căn giữa nội dung theo chiều dọc */
-  padding-left: 100px;     /* Tạo khoảng cách bên trái để không bị ép sát lề */
+  justify-content: center; 
+  padding: 0 60px; /* Đã gộp padding của bạn lại */
   border-right: 1px solid var(--border-subtle);
 }
 
 .sidebar-inner {
   max-width: 300px; /* Giới hạn độ rộng để text trông chuyên nghiệp hơn */
+  height: 90%; /* Hoặc tùy chỉnh để tạo khoảng trống */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Đẩy Identity lên trên và Footer xuống dưới cùng */
 }
 
 /* Identity Section */
@@ -47,6 +51,8 @@
   font-size: 0.95rem;
   line-height: 1.7;
   color: var(--text-secondary);
+  text-align: justify; /* Căn lề đều hai bên */
+  hyphens: auto;       /* Tự động ngắt từ nếu cần để tránh khoảng trắng quá lớn */
 }
 
 /* Navigation & Hover Effects */
@@ -135,21 +141,6 @@
   max-width: 1400px;
   margin: 0 auto;
   min-height: 100vh; /* Đảm bảo bao phủ toàn màn hình */
-}
-
-/* --- SIDEBAR: CĂN GIỮA & CÂN ĐỐI --- */
-.sidebar {
-  width: 35%;
-  height: 100vh;
-  position: sticky;
-  top: 0;
-  padding: 0 60px; /* Padding trái phải rộng rãi */
-  
-  /* Flexbox giúp đưa mọi thứ vào giữa theo chiều dọc */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; 
-  border-right: 1px solid var(--border-subtle); /* Đường kẻ ngăn cách mờ */
 }
 
 
@@ -250,6 +241,7 @@
   font-size: 1.05rem;
   line-height: 1.7;
   margin-bottom: 25px;
+  text-align: justify; /* Giúp các card trông vuông vức, gọn gàng hơn */
 }
 
 /* Tags công nghệ gọn gàng */
@@ -267,29 +259,89 @@
   color: var(--accent);
 }
 
+.about-section{
+
+  margin-top: 120px; /* Tăng khoảng cách để section "thở" tốt hơn */
+  max-width: 700px;
+  position: relative;
+}
+
+.about-content{
+  margin-top:20px;
+  color:#555;
+  line-height:1.7;
+  font-size:0.95rem;
+  text-align: justify; /* Căn lề đều cho nội dung nghiên cứu */
+}
+
+.about-content p{
+  margin-bottom:18px;
+}
+
+.about-skills{
+  margin-top:35px;
+}
+
+.skill-group{
+  margin-bottom: 35px;
+  padding-left: 20px;
+  border-left: 2px solid #f1f5f9; /* Đường kẻ mờ bên trái */
+  transition: border-color 0.3s ease;
+}
+
+.skill-group:hover {
+  border-left-color: var(--accent); /* Đổi màu khi hover giống project card */
+}
+.skill-title{
+  font-size: 0.7rem; /* Nhỏ lại một chút để tinh tế hơn */
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.about-skills .tag {
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.about-skills .tag:hover {
+  background: #eff6ff;
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.about-content strong {
+  color: var(--text-main);
+  font-weight: 600;
+  border-bottom: 1px dotted var(--accent); /* Nhấn mạnh nhẹ nhàng kiểu học thuật */
+}
+
+
+/* --- RESPONSIVE CHO MOBILE / TABLET --- */
 @media (max-width: 1024px) {
-  .layout-wrapper { flex-direction: column; }
+  .layout-wrapper { 
+    flex-direction: column; 
+  }
+  
   .sidebar { 
     width: 100%; 
-    height: auto; 
+    height: auto;           /* Phá bỏ giới hạn 100vh của desktop */
+    position: relative;     /* QUAN TRỌNG: Gỡ bỏ sticky để cuộn tự nhiên cùng trang */
     padding: 60px 40px; 
     border-right: none;
     border-bottom: 1px solid var(--border-subtle);
   }
-  .main-content { width: 100%; padding: 40px; }
-}
-
-
-.sidebar {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Cân giữa nội dung theo chiều dọc */
-}
-
-.sidebar-inner {
-  height: 90%; /* Hoặc tùy chỉnh để tạo khoảng trống */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Đẩy Identity lên trên và Footer xuống dưới cùng */
+  
+  /* Giới hạn lại height của inner trên mobile để không bị thừa khoảng trống */
+  .sidebar-inner {
+    height: auto;
+  }
+  
+  .main-content { 
+    width: 100%; 
+    padding: 40px 20px; /* Chỉnh lại padding nhỏ hơn một chút trên mobile cho đẹp */
+  }
 }
