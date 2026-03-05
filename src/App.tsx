@@ -70,18 +70,20 @@ function App() {
          <div className="section-title">01 // FEATURED WORK</div>
 
         {/* Project 1 */}
-        <div className="project-card">
+        <div className="project-card" onClick={() => window.open("https://github.com/dzokha/SDN-FlexShield-Sentinel", "_blank")}>
           <div className="card-top">
-            <span className="project-year">2024 — PRESENT</span>
+            <span className="project-year">2026 — PRESENT</span>
             <span style={{color: '#2563EB', fontSize: '0.75rem', fontWeight: 700}}>SECURE SYSTEM</span>
           </div>
           <h2 className="card-title">
-            SDN-FlexShield Security
+            SDN-FlexShield Sentinel
             <span className="arrow-icon">→</span>
           </h2>
           <p className="card-desc">
-            Nền tảng giám sát an ninh mạng thời gian thực dành cho SOC. 
-            Tối ưu hóa giao diện Dark Mode để giảm tải thị giác, tích hợp module phân tích luồng dữ liệu thông minh giúp ngăn chặn xâm nhập trái phép.
+            SDN-FlexShield Sentinel là một tiện ích mở rộng trình duyệt mã nguồn mở giúp nâng cao nhận thức an ninh mạng của người dùng thông qua cơ chế phát hiện lừa đảo (phishing) phía máy khách có khả năng giải thích được.
+            <br/>
+            Hệ thống phân tích nội dung trang web ngay trên thiết bị của người dùng bằng cách sử dụng các chỉ báo bảo mật có thể diễn giải và cơ chế chấm điểm rủi ro minh bạch. Thay vì chỉ đơn thuần đánh dấu các trang web đáng ngờ, hệ thống còn giải thích lý do tại sao cảnh báo được kích hoạt, giúp người dùng hiểu rõ hơn về các mối đe dọa trực tuyến, bảo vệ quyền riêng tư và đưa ra các quyết định duyệt web an toàn hơn.
+          
           </p>
           <div className="tags">
             <span className="tag">Cybersecurity UI</span>
@@ -93,14 +95,14 @@ function App() {
         {/* Project 2 */}
         <div className="project-card" onClick={() => navigate('/geneai')}>
           <div className="card-top">
-             <span className="project-year">2024</span>
+             <span className="project-year">2025</span>
           </div>
           <h2 className="card-title">
-            GeneAI Analytics
+            SOAP
             <span className="arrow-icon">→</span>
           </h2>
           <p className="card-desc">
-            Công cụ AI tự động chú giải gen sinh học. Thiết kế tối giản (Minimalism) tập trung tuyệt đối vào hiển thị dữ liệu phức tạp, giúp các nhà nghiên cứu thao tác nhanh hơn 40%.
+            Công cụ tự động chú giải gen sinh học. Thiết kế tối giản (Minimalism) tập trung tuyệt đối vào hiển thị dữ liệu phức tạp, giúp các nhà nghiên cứu thao tác nhanh hơn.
           </p>
           <div className="tags">
             <span className="tag">AI Interface</span>
@@ -110,17 +112,16 @@ function App() {
         </div>
 
         {/* Project 3 */}
-        <div className="project-card">
+        <div className="project-card" onClick={() => window.open("https://github.com/dzokha/IDS-AC", "_blank")}>
           <div className="card-top">
              <span className="project-year">2023</span>
           </div>
           <h2 className="card-title">
-            Shop Fish E-commerce
+            IDS-AC
             <span className="arrow-icon">→</span>
           </h2>
           <p className="card-desc">
-            Sàn thương mại điện tử chuyên biệt. Xây dựng trải nghiệm người dùng (UX) liền mạch từ khâu tìm kiếm đến thanh toán, tối ưu tỷ lệ chuyển đổi đơn hàng.
-          </p>
+            IDS-AC là một hệ thống phát hiện xâm nhập thích ứng được phát triển dành cho người dùng kỹ thuật và sinh viên nhằm nghiên cứu, thử nghiệm và cải tiến các kỹ thuật phát hiện tấn công hiện đại.          </p>
           <div className="tags">
             <span className="tag">E-commerce</span>
             <span className="tag">Fullstack</span>
