@@ -123,6 +123,27 @@ function App() {
           </div>
         </div>
 
+        {/* MỚI: Dự án Sách - Cyberspace */}
+        <div className="project-card" onClick={() => window.open("https://timerent.vn/cac-hinh-thuc-tan-cong-mang", "_blank")}>
+          <div className="card-top">
+            <span className="project-year">2022</span>
+            <span style={{color: '#10B981', fontSize: '0.75rem', fontWeight: 700}}>PUBLICATION</span>
+          </div>
+          <h2 className="card-title">
+            Các hình thức tấn công mạng - Cyberspace
+            <span className="arrow-icon">→</span>
+          </h2>
+          <p className="card-desc">
+            Tài liệu nghiên cứu và hướng dẫn thực hành an ninh mạng dành cho cộng đồng. Cuốn sách kết hợp giữa giáo dục tri thức và xây dựng ý thức bảo mật, từ lý thuyết mã độc đến thiết lập môi trường thử nghiệm tấn công thực tế.
+          </p>
+          <div className="tags">
+            <span className="tag">Cybersecurity Education</span>
+            <span className="tag">Cyber Attacks Analysis</span>
+            <span className="tag">Lab Environment</span>
+            <span className="tag">Cyber Awareness</span>
+          </div>
+        </div>
+
         {/* Project 3 */}
         <div className="project-card" onClick={() => window.open("https://github.com/dzokha/IDS-AC", "_blank")}>
           <div className="card-top">
